@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {addNote} from '../store/actions/note';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SubmitButton = (props: {
   data: {title: string; subtitle: string; navigation: any};
@@ -16,14 +17,18 @@ const SubmitButton = (props: {
   );
   const [submitting, setSubmitting] = useState(false);
   const dispatch = useDispatch();
-  const submit = () => {
+  const submit = async () => {
     if (props.data.title !== '' && props.data.subtitle !== '') {
       setSubmitting(true);
-      setTimeout(() => {
-        dispatch(addNote([...data, props.data]));
-        setSubmitting(false);
-        props.data.navigation.goBack();
-      }, 1000);
+      try {
+        const jsonValue = JSON.stringify([...data, props.data]);
+        await AsyncStorage.setItem('@notes', jsonValue);
+      } catch (e) {
+        console.log('Error');
+      }
+      dispatch(addNote([...data, props.data]));
+      setSubmitting(false);
+      props.data.navigation.goBack();
     }
   };
   return (
