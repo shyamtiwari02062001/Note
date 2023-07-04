@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-const ListItem = () => {
+const ListItem = (props: {title: string; subtitle: string}) => {
   return (
     <View style={styles.card}>
-      <Text style={styles.title}>title</Text>
+      <Text style={styles.title}>{props.title}</Text>
       <View style={styles.divider} />
-      <Text style={styles.subtitle}>subtitle</Text>
+      <Text style={styles.subtitle}>{props.subtitle}</Text>
     </View>
   );
 };

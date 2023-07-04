@@ -1,36 +1,12 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  useColorScheme,
-} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
 
-import FloatingButton from './components/floatingButton';
-import SubmitButton from './components/button';
-import ListItem from './components/listItem';
+import HomeScreen from './screens/homeScreen';
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={'red'}
-      />
-
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <SubmitButton />
-
-      <FloatingButton />
+      <HomeScreen />
     </SafeAreaView>
   );
 }
