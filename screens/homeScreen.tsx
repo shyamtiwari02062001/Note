@@ -2,7 +2,7 @@ import React from 'react';
 import {FlatList, View} from 'react-native';
 import ListItem from '../components/listItem';
 import FloatingButton from '../components/floatingButton';
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const data = [
     {title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'},
     {title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'},
@@ -23,7 +23,7 @@ const HomeScreen = () => {
           <ListItem key={index} title={item.title} subtitle={item.subtitle} />
         )}
       />
-      <FloatingButton />
+      <FloatingButton navigation={navigation} />
     </View>
   );
 };

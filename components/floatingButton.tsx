@@ -1,10 +1,10 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-const FloatingButton = () => {
+const FloatingButton = (props: {navigation: any}) => {
   return (
     <TouchableOpacity
       activeOpacity={0.8}
-      onPress={() => console.log('Shyam')}
+      onPress={() => props.navigation.navigate('addNote')}
       style={styles.container}>
       <Text style={styles.text}>Add</Text>
     </TouchableOpacity>
