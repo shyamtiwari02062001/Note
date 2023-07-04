@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, TextInput, StatusBar, StyleSheet} from 'react-native';
 import SubmitButton from '../components/button';
 
-const AddNote = () => {
+const AddNote = (props: {navigation: any}) => {
+  const [title, setTitle] = useState('');
+  const [subTitle, setSubTitle] = useState('');
   return (
     <View>
       <StatusBar backgroundColor={'red'} />
@@ -10,6 +12,7 @@ const AddNote = () => {
         style={styles.input}
         placeholderTextColor={'grey'}
         placeholder="Title"
+        onChangeText={val => setTitle(val)}
       />
       <TextInput
         style={[styles.input, styles.multiLine]}
@@ -17,8 +20,11 @@ const AddNote = () => {
         numberOfLines={5}
         placeholderTextColor={'grey'}
         placeholder="Body"
+        onChangeText={val => setSubTitle(val)}
       />
-      <SubmitButton />
+      <SubmitButton
+        data={{title: title, subtitle: subTitle, navigation: props.navigation}}
+      />
     </View>
   );
 };

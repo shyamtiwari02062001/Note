@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-const ListItem = (props: {title: string; subtitle: string}) => {
+const ListItem = (props: {data: {title: string; subtitle: string}}) => {
   return (
     <View style={styles.card}>
-      <Text style={styles.title}>{props.title}</Text>
+      <Text style={styles.title}>{props.data.title}</Text>
       <View style={styles.divider} />
-      <Text style={styles.subtitle}>{props.subtitle}</Text>
+      <Text style={styles.subtitle}>{props.data.subtitle}</Text>
     </View>
   );
 };
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     margin: 10,
     backgroundColor: '#fff',
-    height: 110,
+    minHeight: 110,
     borderRadius: 20,
     elevation: 20,
     shadowColor: '#000',
