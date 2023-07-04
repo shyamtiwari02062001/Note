@@ -1,10 +1,13 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 const FloatingButton = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>ADD</Text>
-    </View>
+    <TouchableOpacity
+      activeOpacity={0.8}
+      onPress={() => console.log('Shyam')}
+      style={styles.container}>
+      <Text style={styles.text}>Add</Text>
+    </TouchableOpacity>
   );
 };
 export default FloatingButton;
@@ -13,8 +16,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 20,
     right: 20,
-    height: 80,
-    width: 80,
+    height: 60,
+    width: 60,
     borderRadius: 40,
     backgroundColor: 'red',
     justifyContent: 'center',
