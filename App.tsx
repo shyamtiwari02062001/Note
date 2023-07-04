@@ -1,20 +1,33 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
 
 import HomeScreen from './screens/homeScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+const Stack = createStackNavigator();
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView style={styles.container}>
-      <HomeScreen />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: true}}>
+        <Stack.Screen
+          options={{
+            headerStyle: {
+              backgroundColor: 'red',
+            },
+            headerTitle: 'Notes App',
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              fontSize: 24,
+              fontWeight: 'bold',
+              color: '#fff',
+            },
+          }}
+          name="Home"
+          component={HomeScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-  },
-});
 
 export default App;

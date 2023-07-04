@@ -16,7 +16,7 @@ const HomeScreen = () => {
     {title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'},
   ];
   return (
-    <View style={{}}>
+    <View>
       <FlatList
         data={data}
         renderItem={({item, index}) => (

@@ -17,16 +17,16 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     paddingHorizontal: 20,
     paddingVertical: 10,
-    margin: 20,
+    margin: 10,
     backgroundColor: '#fff',
-    height: 100,
+    height: 110,
     borderRadius: 20,
     elevation: 20,
     shadowColor: '#000',
   },
   title: {
     color: '#000',
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
   },
   divider: {
@@ -37,6 +37,6 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     color: '#000',
-    fontSize: 20,
+    fontSize: 18,
   },
 });
