@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, TextInput, StyleSheet} from 'react-native';
+import {View, TextInput, StatusBar, StyleSheet} from 'react-native';
 import SubmitButton from '../components/button';
 
 const AddNote = () => {
   return (
     <View>
+      <StatusBar backgroundColor={'red'} />
       <TextInput
         style={styles.input}
         placeholderTextColor={'grey'}

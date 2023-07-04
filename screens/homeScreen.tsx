@@ -1,22 +1,12 @@
 import React from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList, StatusBar, StyleSheet, View} from 'react-native';
 import ListItem from '../components/listItem';
 import FloatingButton from '../components/floatingButton';
 const HomeScreen = (props: {navigation: any}) => {
-  const data = [
-    {title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'},
-    {title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'},
-    {title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'},
-    {title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'},
-    {title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'},
-    {title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'},
-    {title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'},
-    {title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'},
-    {title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'},
-    {title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'},
-  ];
+  const data = [{title: 'dsbjdk', subtitle: 'sdfcgvhubjdikn'}];
   return (
-    <View>
+    <View style={styles.container}>
+      <StatusBar backgroundColor={'red'} />
       <FlatList
         data={data}
         renderItem={({item, index}) => (
@@ -28,3 +18,6 @@ const HomeScreen = (props: {navigation: any}) => {
   );
 };
 export default HomeScreen;
+const styles = StyleSheet.create({
+  container: {height: '100%'},
+});
